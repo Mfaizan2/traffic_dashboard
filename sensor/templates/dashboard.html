@@ -1,0 +1,71 @@
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sensor dashboard</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+
+    </head>
+
+    <body style="font-family: fantasy;">
+
+        <header class="text-center header-custom">
+            <h1 class="header-text-custom">Sensor Traffic Dashboard</h1>
+        </header>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <div>
+                <h1>Welcome to my website, where you can track vehicle locations on an interactive map</h1>
+                <h4 class="mt-4">I've implemented a smart lazy loading feature, ensuring that vehicle locations are loaded dynamically as you explore the map.<br> No need to wait for all data to load upfront – enjoy a seamless and efficient experience as<br> you move around and discover real-time vehicle positions</h4>
+                <h4 class="graph-heading-custom">Select a specific vehicle to access detailed speed data presented in graph format.</h4>
+            </div>
+        </div>
+
+
+        <div class="filter-custom">
+
+            <select class="select-box-custom" name="cityDropdown" id="cityDropdown">
+                <option value="Sydney" selected>Sydney</option>
+                <option value="Lahore">Lahore</option>
+                <option value="San Francisco">San Francisco</option>
+                <option value="Los Angeles">Los Angeles</option>
+            </select>
+            <input class="date-picker-custom" type="text" id="dateRangePicker" name="dateRange" style="margin-left: 15px;" />
+
+        </div>
+
+        <div class="m-4">
+            <div id="map" class="mt-4" style="width: 100%; height: 500px;"></div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="speed-graph-custom">
+                    <canvas id="sensor_speed_bar_char"></canvas>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="speed-graph-custom">
+                    <canvas id="sensor_average_speed_bar_char"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcX3LPr7C5o-ECg3qAUJwT5D2-gJH5nww"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+
+    </body>
+</html>
